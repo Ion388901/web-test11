@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Diario</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Mi Diario</a></h1>
+        </div>
+        {% extends 'blog/base.html' %}
+        {% block content %}
+            {% for post in posts %}
+            <div class="post">
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+                <h3><a href="">{{ post.nombre }}</a></h3>
+                <p>{{ post.list|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    {% endblock %}
+    </body>
+</html>
